@@ -96,9 +96,13 @@ form.addEventListener('submit', async (event) => {
 
   if (response.ok) {
     form.reset();
+    window.location.href = "thanks.html";
+
     status.textContent = '¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.';
     status.classList.add('success');
   } else {
+    window.location.href = "thanks.html";
+
     status.textContent = 'Ocurrió un error al enviar el formulario. Inténtalo de nuevo más tarde.';
     status.classList.add('error');
   }
