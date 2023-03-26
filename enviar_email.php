@@ -1,25 +1,33 @@
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  echo '<script>console.log("Entro");</script>';
+
+
   // Recibe los datos del formulario
-  $nombre = $_POST['firstName'];
-  $lastName = $_POST['lastName'];
-  $cedula = $_POST['cedula'];
-  $email = $_POST['email'];
-  $address = $_POST['address'];
-  $provincia = $_POST['provincia'];
-  $municipios = $_POST['municipios'];
-  $zip = $_POST['zip'];
-  $Empadronador = $_POST['Empadronador'];
+  $nombre = isset($_POST['firstName']) ? $_POST['firstName'] : '';
+  $lastName = isset($_POST['lastName']) ? $_POST['lastName'] : '';
+  $cedula = isset($_POST['cedula']) ? $_POST['cedula'] : '';
+  $email = isset($_POST['email']) ? $_POST['email'] : '';
+  $address = isset($_POST['address']) ? $_POST['address'] : '';
+  $provincia = isset($_POST['provincia']) ? $_POST['provincia'] : '';
+  $municipios = isset($_POST['municipios']) ? $_POST['municipios'] : '';
+  $zip = isset($_POST['zip']) ? $_POST['zip'] : '';
+  $Empadronador = isset($_POST['Empadronador']) ? $_POST['Empadronador'] : '';
   
   // Configuración del correo electrónico
-  $destinatario = 'jansgreen@example.com';
-  $asunto = "Aqui te envio mis datos para registrarme" + [$nombre, $lastName,  $cedula, $email,  $address, $provincia, $municipios,  $zip,  $Empadronador ];
-  $cuerpo = "Nombre: $nombre, $lastName \n Email: $email\nMensaje: $mensaje";
+  $destinatario = 'jansgreen@gmail.com';
+  $asunto = "Aqui te envio mis datos para registrarme: $nombre $lastName, $cedula, $email, $address, $provincia, $municipios, $zip, $Empadronador";
+  $cuerpo = "Nombre: $nombre $lastName \n Email: $email\nMensaje: $mensaje";
   $headers = "From: $email\r\nReply-To: $email\r\n";
   
   // Envía el correo electrónico
   if (mail($destinatario, $asunto, $cuerpo, $headers)) {
-    echo 'Mensaje enviado exitosamente';
+   header('Location: thanks.html');
+   exit();
   } else {
-    echo 'Error al enviar el mensaje';
+   header('Location: thanks.html');
+   exit();
   }
+}
+
 ?>

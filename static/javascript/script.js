@@ -78,32 +78,3 @@ provinciaSelect.addEventListener('change', function() {
 
 
 });
-
-const form = document.querySelector('form');
-const status = document.querySelector('.status');
-
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(form);
-  const response = await fetch(form.action, {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json'
-    },
-    body: formData
-  });
-
-  if (response.ok) {
-    form.reset();
-    window.location.href = "thanks.html";
-
-    status.textContent = '¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.';
-    status.classList.add('success');
-  } else {
-    window.location.href = "thanks.html";
-
-    status.textContent = 'Ocurrió un error al enviar el formulario. Inténtalo de nuevo más tarde.';
-    status.classList.add('error');
-  }
-});

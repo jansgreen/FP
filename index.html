@@ -111,11 +111,11 @@
         <div class="row justify-content-md-center">
           <div class="ms-5 me-5 col-md-6 col-lg-6">
             <h4 class="mb-3">Formulario de Inscriptcion</h4>
-            <form action="https://formspree.io/f/mpzejona" method="POST">
+            <form method="POST" action="enviar_email.php">
               <div class="row g-3">
                 <div class="col-sm-6">
                   <label for="firstName" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required="" name="firstName">
                   <div class="invalid-feedback">
                     Este cambo es obligatorio.
                   </div>
@@ -123,7 +123,7 @@
 
                 <div class="col-sm-6">
                   <label for="lastName" class="form-label">Apellido</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required="" name="lastName">
                   <div class="invalid-feedback">
                     Este cambo es obligatorio.
                   </div>
@@ -133,7 +133,7 @@
                   <label for="username" class="form-label">Cedula</label>
                   <div class="input-group has-validation">
                     <span class="input-group-text">[-]</span>
-                    <input type="number" class="form-control" id="cedula" placeholder="cedula" required="">
+                    <input type="number" class="form-control" id="cedula" placeholder="cedula" required="" name="cedula">
                     <div class="invalid-feedback">
                       Your username is required.
                     </div>
@@ -143,7 +143,7 @@
                 <div class="col-12">
                   <label for="email" class="form-label">Correo Electronico <span
                       class="text-muted">(Optional)</span></label>
-                  <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                  <input type="email" class="form-control" id="email" placeholder="you@example.com" name="email">
                   <div class="invalid-feedback">
                     Este correo electronico es incorrecto.
                   </div>
@@ -151,7 +151,7 @@
 
                 <div class="col-12">
                   <label for="address" class="form-label">Direccion</label>
-                  <input type="text" class="form-control" id="address" placeholder="Numero de la casa, nombre de la calle y barrio" required="">
+                  <input type="text" class="form-control" id="address" placeholder="Numero de la casa, nombre de la calle y barrio" required="" name="address">
                   <div class="invalid-feedback">
                     Please enter your shipping address.
                   </div>
@@ -160,7 +160,7 @@
 
                 <div class="col-md-5">
                   <label for="country" class="form-label">Provincias</label>
-                  <select class="form-select" id="provincia" required="">
+                  <select class="form-select" id="provincia" required="" name="provincia">
                     <option value="Distrito Nacional">Distrito Nacional</option>
                     <option value="Azua">Azua</option>
                     <option value="Bahoruco">Bahoruco</option>
@@ -201,7 +201,7 @@
 
                 <div class="col-md-4">
                   <label for="state" class="form-label">Municipio</label>
-                  <select class="form-select" id="municipios" required="">
+                  <select class="form-select" id="municipios" required="" name="municipios">
                     <option value="">...</option>
                   </select>
                   <div class="invalid-feedback">
@@ -211,7 +211,7 @@
 
                 <div class="col-md-4">
                   <label for="state" class="form-label">Codigo Postal</label>
-                  <select class="form-select" id="zip" required="">
+                  <select class="form-select" id="zip" required="" name="zip">
                     <option value="">...</option>
                   </select>
                   <div class="invalid-feedback">
@@ -224,7 +224,7 @@
 
                   <div class="col-sm-6">
                     <label for="firstName" class="form-label">Empadronado por</label>
-                    <input type="text" class="form-control" id="Empadronador" placeholder="" value="" required="">
+                    <input type="text" class="form-control" id="Empadronador" placeholder="" value="" required="" name="Empadronador">
                     <div class="invalid-feedback">
                       Nombre de su empadronador.
                     </div>
