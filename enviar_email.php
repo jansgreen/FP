@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Recibe los datos del formulario
   $nombre = isset($_POST['firstName']) ? $_POST['firstName'] : '';
