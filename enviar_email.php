@@ -1,7 +1,5 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  echo '<script>console.log("Entro");</script>';
-
 
   // Recibe los datos del formulario
   $nombre = isset($_POST['firstName']) ? $_POST['firstName'] : '';
@@ -25,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    header('Location: thanks.html');
    exit();
   } else {
-   header('Location: thanks.html');
+   header('Location: error.html');
    exit();
   }
 }
